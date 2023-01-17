@@ -1,13 +1,16 @@
-import HeaderTop from "./components/header/header-top/index";
-import HeaderCenter from "./components/header/header-center/index";
-import HeaderBottom from "./components/header/header-bottom";
+
+import Carausel from "./components/carausel/index";
+import Products from "./components/products";
+import TypeList from "./components/typeList/index";
+
 
 export default function Home() {
   return (
-<div className="relative">
-  <HeaderTop />
-  <HeaderCenter />
-  <HeaderBottom />
+<div className="relative bg-customLightGray">
+
+  <Carausel />
+  <TypeList />
+  <Products />
 </div>
   )
 }

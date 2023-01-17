@@ -9,30 +9,30 @@ export default function HeaderBottom() {
     
 
     const handleOnBlur = () => {
-        setMenuVisibility(true);
+     setMenuVisibility(!menuVisibility);
+       
     }
 
-    const handleOnLeave = () => {
-        setMenuVisibility(false);
-    }
 
     return (
+        <>
         <div className={S.rows}>
             <div className={S.row}>
                 <div className={S.content}>
                     <ul className={S.items}>
-                        <li onMouseOver={handleOnBlur} onMouseLeave={handleOnLeave} className={S.item}>İşlemciler</li>
-                        <li onMouseOver={handleOnBlur} onMouseLeave={handleOnLeave} className={S.item}>Ekran Kartları</li>
-                        <li onMouseOver={handleOnBlur} onMouseLeave={handleOnLeave} className={S.item}>Anakartlar</li>
-                        <li onMouseOver={handleOnBlur} onMouseLeave={handleOnLeave} className={S.item}>Depolama Birimleri</li>
-                        <li onMouseOver={handleOnBlur} onMouseLeave={handleOnLeave} className={S.item}>Çevre Birimleri</li>
+                        <li onClick={handleOnBlur} className={S.item}>İşlemciler</li>
+                        <li onClick={handleOnBlur} className={S.item}>Ekran Kartları</li>
+                        <li onClick={handleOnBlur} className={S.item}>Anakartlar</li>
+                        <li onClick={handleOnBlur} className={S.item}>Depolama Birimleri</li>
+                        <li onClick={handleOnBlur} className={S.item}>Çevre Birimleri</li>
                     </ul>
                     
                 </div>
 
+
                 <div className={`${S.row2} ${menuVisibility === false ? "lg:hidden" : ""} `}>
                     <div className={S.content2} >
-                        <div className='px-6 py-4 bg-customLightGray flex gap-x-12  '> 
+                        <div className={S.megaList}> 
                                 <ul>
                                     <li>Lorem, ipsum.</li>
                                     <li>Modi, cupiditate.</li>
@@ -63,5 +63,9 @@ export default function HeaderBottom() {
 
 
         </div>
+
+
+
+        </>
     )
 }

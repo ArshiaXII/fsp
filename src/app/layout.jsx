@@ -1,6 +1,10 @@
 import './reset.css';
 import './globals.css';
 import './output.css';
+import HeaderTop from './components/header/header-top/index';
+import HeaderCenter from './components/header/header-center/index';
+import HeaderBottom from './components/header/header-bottom/index';
+import Footer from './components/footer/index';
 
 export default function RootLayout({ children }) {
   return (
@@ -11,7 +15,17 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body >{children}</body>
+      <body >
+        <>
+          <HeaderTop />
+          <HeaderCenter />
+          <HeaderBottom />
+        </>
+        {children}
+        <>
+          <Footer />
+        </>
+      </body>
     </html>
   )
 }

@@ -1,10 +1,13 @@
 import React from 'react'
-import ContentTop from './components/contentTop'
+import ContentBottom from './components/contentBottom/longInfo'
+import ContentTop from './components/contentTop';
+import * as S from "./styled";
 
 export default function Content() {
   return (
-    <div>
+    <div className={S.mainDiv}>
         <ContentTop />
+        <ContentBottom />
     </div>
   )
 }

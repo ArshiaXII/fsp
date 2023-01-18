@@ -11,7 +11,7 @@ function HeaderTop() {
         <span className={S.user}>
           <BiUser />
         </span>
-        <Link href="/uye-girisi">Üye Girişi</Link>
+        <Link href="/login">Üye Girişi</Link>
         <span> / </span>
         <Link href="/uye-ol">Yeni Üyelik</Link>
       </div>

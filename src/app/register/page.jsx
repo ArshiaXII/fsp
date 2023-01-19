@@ -10,44 +10,44 @@ import * as S from "./styled";
 
 export default function RegisterPage() {
     return (
-        <div className='bg-customLightGray py-6'>
+        <div className={S.mainDiv}>
 
-            <div className='container px-12'>
-                <div className=' flex justify-center items-center p-4'>
-                    <div className='bg-customWhite  border border-solid border-gray-300 py-4 sm:px-8 px-16 flex flex-col items-center justify-center gap-y-3'>
+            <div className={S.container}>
+                <div className={S.registerBody}>
+                    <div className={S.registerMain}>
                         <FaUserCircle className='text-8xl text-customLightGray' />
-                        <h1 className='text-xl font-medium'>Kayıt Ol</h1>
+                        <h1 className={S.registerTitle}>Kayıt Ol</h1>
 
-                        <form className='flex flex-col gap-y-3 items-center justify-center'>
-                            <div className='border border-solid border-gray-300 flex flex-col sm:flex-row justify-center items-center'>
-                                <span className='border-r p-2 border-gray-300 border-solid hidden sm:flex justify-center items-center'>
+                        <form className={S.registerForm}>
+                            <div className={S.registerInputDiv}>
+                                <span className={S.registerInputSpan}>
                                     <MdPermIdentity />
                                 </span>
-                                <input placeholder='Ad' type="text" className='w-48 p-2 border-r border-gray-300 border-solid' />
-                                <input placeholder='Soyad' type="text" className='w-48 p-2' />
+                                <input placeholder='Ad' type="text" className={S.registerTextInput} />
+                                <input placeholder='Soyad' type="text" className={S.registerTextInput2} />
                             </div>
                             {/* E-Mail */}
-                            <div className='border border-solid border-gray-300 flex flex-col sm:flex-row justify-center items-center'>
-                                <span className='border-r p-2 border-gray-300 border-solid hidden sm:flex  justify-center items-center'>
+                            <div className={S.registerInputDiv}>
+                                <span className={S.registerInputSpan}>
                                     <MdAlternateEmail />
                                 </span>
-                                <input placeholder='Email' type="email" className='w-48 p-2 border-r border-gray-300 border-solid' />
-                                <input placeholder='Email Tekrar' type="email" className='w-48 p-2' />
+                                <input placeholder='Email' type="email" className={S.registerTextInput} />
+                                <input placeholder='Email Tekrar' type="email" className={S.registerTextInput2} />
                             </div>
                             {/* Password */}
-                            <div className='border border-solid border-gray-300 flex flex-col sm:flex-row justify-center items-center'>
-                                <span className='border-r p-2 border-gray-300 border-solid hidden sm:flex  justify-center items-center'>
+                            <div className={S.registerInputDiv}>
+                                <span className={S.registerInputSpan}>
                                     <RiLockPasswordLine />
                                 </span>
-                                <input placeholder='Parola' type="password" className='w-48 p-2 border-r border-gray-300 border-solid' />
-                                <input placeholder='Parola Tekrar' type="password" className='w-48 p-2 ' />
+                                <input placeholder='Parola' type="password" className={S.registerTextInput} />
+                                <input placeholder='Parola Tekrar' type="password" className={S.registerTextInput2} />
                             </div>
                             {/* Gender Select */}
-                            <div className='w-full border border-solid border-gray-300 flex justify-start items-center'>
-                                <span className='border-r p-2 border-gray-300 border-solid hidden sm:flex  justify-center items-center'>
+                            <div className={S.registerRadioInputMainDiv}>
+                                <span className={S.registerInputSpan}>
                                     <BsGenderAmbiguous />
                                 </span>
-                                <div className='flex justify-center items-center w-full gap-x-3'>
+                                <div className={S.registerRadioInputDiv}>
                                     <div><input type="radio" name="gender" value="female" /> <label>Kadın</label></div>
                                     <div><input type="radio" name="gender" value="male" /> <label>Erkek</label></div>
                                     <div><input type="radio" name="gender" value="unknown" /> <label>*</label></div>
@@ -55,7 +55,7 @@ export default function RegisterPage() {
                             </div>
                             {/* Register Button */}
                             <div className='w-full'>
-                                <button className='text-customWhite bg-customRed w-full py-2'>Kayıt Ol</button>
+                                <button className={S.registerBtn}>Kayıt Ol</button>
                             </div>
                         </form>
                     </div>

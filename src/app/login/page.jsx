@@ -2,45 +2,46 @@ import Link from 'next/link';
 import React from 'react';
 import { FaUserCircle } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-import { RiLockPasswordLine } from "react-icons/ri"
+import { RiLockPasswordLine } from "react-icons/ri";
+import * as S from "./styled";
 
 export default function LoginPage() {
     return (
-        <div className='bg-customLightGray py-6'>
+        <div className={S.mainDiv}>
 
-            <div className='container px-12'>
-                <div className=' flex justify-center items-center p-4 h-96'>
-                    <div className='bg-customWhite border border-solid border-gray-300 py-4 px-8 flex flex-col items-center justify-center gap-y-3'>
+            <div className={S.container}>
+                <div className={S.loginDiv}>
+                    <div className={S.loginBody}>
                         <FaUserCircle className='text-8xl text-customLightGray' />
-                        <h1 className='text-xl font-medium'>Giriş Yap</h1>
+                        <h1 className={S.loginTitle}>Giriş Yap</h1>
 
-                        <form className='flex flex-col gap-y-3 items-center justify-center'>
+                        <form className={S.loginForm}>
                             {/* E-Mail */}
-                            <div className='border border-solid border-gray-300 flex justify-center items-center'>
-                                <span className='border-r p-2 border-gray-300 border-solid flex justify-center items-center'>
+                            <div className={S.loginInputDiv}>
+                                <span className={S.loginSpan}>
                                     <MdAlternateEmail />
                                 </span>
                                 <input placeholder='Email' type="email" className='w-48 p-2' />
                             </div>
                             {/* Password */}
-                            <div className='border border-solid border-gray-300 flex justify-center items-center'>
-                                <span  className='border-r p-2 border-gray-300 border-solid flex justify-center items-center'>
+                            <div className={S.loginInputDiv}>
+                                <span  className={S.loginSpan}>
                                     <RiLockPasswordLine />
                                 </span>
                                 <input placeholder='Parola' type="password" className='w-48 p-2' />
                             </div>
 
                             {/* Remember Me */}
-                            <div className='text-xs flex justify-between items-center w-full px-2'>
-                                <span className='flex justify-start items-center gap-x-1'>
+                            <div className={S.loginRememberDiv}>
+                                <span className={S.loginRememberCheckbox}>
                                     <input type="checkbox" id="remember-me-input" />
                                     <label htmlFor='remember-me-input'> Beni Hatırla</label>
                                 </span>
-                                    <Link href="/forgot-password" className="text-customRed hover:underline" >Şifremi Unuttum</Link>
+                                    <Link href="/forgot-password" className={S.forgotPassword}>Şifremi Unuttum</Link>
                             </div>
                             {/* Login Button */}
                             <div className='w-full'>
-                                <button className='text-customWhite bg-customRed w-full py-2'>Giriş Yap</button>
+                                <button className={S.loginBtn}>Giriş Yap</button>
                             </div>
                         </form>
                     </div>

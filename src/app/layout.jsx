@@ -5,6 +5,7 @@ import HeaderTop from './components/header/header-top/index';
 import HeaderCenter from './components/header/header-center/index';
 import HeaderBottom from './components/header/header-bottom/index';
 import Footer from './components/footer/index';
+import Products from '@/context/Products';
 
 export default function RootLayout({ children }) {
   return (
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body >
+        <Products>
         <>
           <HeaderTop />
           <HeaderCenter />
@@ -25,6 +27,7 @@ export default function RootLayout({ children }) {
         <>
           <Footer />
         </>
+        </Products>
       </body>
     </html>
   )

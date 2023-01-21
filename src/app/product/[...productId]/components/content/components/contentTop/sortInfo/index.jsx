@@ -5,12 +5,12 @@ import { AiOutlineGift,AiFillSound, AiFillHeart, AiFillMessage, AiFillBell} from
 import { MdDeliveryDining } from "react-icons/md";
 
 
-export default function ProductSortInfo() {
+export default function ProductSortInfo({product}) {
     return (
         <div className={S.mainDiv}>
             <div className={S.pricing}>
-                <h2 className={S.price}>3.199,00 TL</h2>
-                <h4 className={S.installment}><span className={S.installmentPrice}>388,50 TL</span> den başlayan taksitlerle!</h4>
+                <h2 className={S.price}>{product.totalprice},00 TL</h2>
+                <h4 className={S.installment}><span className={S.installmentPrice}>{product.reducedprice},00 TL</span> KDV hariç fiyatıdır!</h4>
             </div>
             <div className={S.quickInfos}>
                 <div>
@@ -24,9 +24,9 @@ export default function ProductSortInfo() {
                     <div className={S.quickInfo}>:</div>
                 </div>
                 <div>
-                    <div className={S.quickInfoValue}>Kategori </div>
-                    <div className={S.quickInfoValue}>Marka</div>
-                    <div className={S.quickInfoValue}>Stok Kodu</div>
+                    <div className={S.quickInfoValue}>{product.type} </div>
+                    <div className={S.quickInfoValue}>{product.brand}</div>
+                    <div className={S.quickInfoValue}>{product.id}</div>
                 </div>
             </div>
             <BasketItem />

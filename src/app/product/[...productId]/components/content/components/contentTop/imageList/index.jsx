@@ -3,9 +3,9 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import * as S from "./styled"
 
-export default function ProductImages() {
+export default function ProductImages({product}) {
 
-    const images = ["https://st3.myideasoft.com/idea/hz/44/myassets/products/024/kitchenaid-5kfc0516eer-empire-red-1-19-litre-mutfak-robotu-4903.jpeg?revision=1673085675","https://st.myideasoft.com/idea/hz/44/myassets/products/024/kitchenaid-5kfc0516eer-empire-red-1-19-litre-mutfak-robotu-4906_min.jpeg?revision=1673085675","https://st3.myideasoft.com/idea/hz/44/myassets/products/024/kitchenaid-5kfc0516eer-empire-red-1-19-litre-mutfak-robotu-4905_min.jpeg?revision=1673085675","https://st1.myideasoft.com/idea/hz/44/myassets/products/024/kitchenaid-5kfc0516eer-empire-red-1-19-litre-mutfak-robotu-4904_min.jpeg?revision=1673085675"];
+    const images = product.images;
 
     const [selectedImage,setSelectedImage] = useState(0);
 

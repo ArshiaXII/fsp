@@ -25,7 +25,7 @@ export default function TypeList() {
                 <div key={index} className={S.row}>
                     {images[index].map((image, ind) => (
                         <Link href="/product-type" className={S.imageCol}>
-                            <Image key={ind} src={images[index][ind]} className alt="product" />
+                            <Image key={ind} src={images[index][ind]}  alt="product" />
                         </Link>
                     ))}
                 </div>

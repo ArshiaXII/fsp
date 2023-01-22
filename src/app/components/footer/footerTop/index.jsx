@@ -7,7 +7,7 @@ export default function FooterTop() {
         <div className={S.mainDiv}>
             <div className={S.content}>
                 <div className={S.col}>
-                    <h5 className={S.title}>SOSYAL MEDYA</h5>
+                    <div className={S.title}>SOSYAL MEDYA</div>
                     <div className={S.medias}>
                         <div className={S.icon}>
                             <FiFacebook />
@@ -21,7 +21,7 @@ export default function FooterTop() {
                     </div>
                 </div>
                 <div className={S.col}>
-                    <h5  className={S.title}>E-BÜLTEN</h5>
+                    <div className={S.title}>E-BÜLTEN</div>
                     <div>
                         <input  className={S.input} type="text" />
                         <button  className={S.btn}>EKLE</button>

@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BsCircleFill } from "react-icons/bs";
@@ -41,7 +42,7 @@ export default function ImageCarousel() {
             {/* //Images */}
             <div>
                 <Link href="/">
-                <img src={images[currentImageIndex]} alt="resim" />
+                <Image width={1400} height={400} src={images[currentImageIndex]} alt="resim" />
                 </Link>
             </div>
 

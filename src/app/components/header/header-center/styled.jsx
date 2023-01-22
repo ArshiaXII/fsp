@@ -8,7 +8,6 @@ const styles = {
     logo1: "text-customRed",
     logo2: "text-customBlack",
     searchDiv: "hidden lg:block lg:flex-1 px-10",
-    btnMenu:"text-custom-Gray cursor-pointer lg:hidden",
     btnUser: "text-custom-Gray cursor-pointer lg:hidden"
 
 }

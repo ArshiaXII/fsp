@@ -6,6 +6,7 @@ import HeaderCenter from './components/header/header-center/index';
 import HeaderBottom from './components/header/header-bottom/index';
 import Footer from './components/footer/index';
 import Products from '@/context/Products';
+import Users from '@/context/User';
 
 export default function RootLayout({ children }) {
   return (
@@ -17,17 +18,19 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body >
-        <Products>
-        <>
-          <HeaderTop />
-          <HeaderCenter />
-          <HeaderBottom />
-        </>
-        {children}
-        <>
-          <Footer />
-        </>
-        </Products>
+        <Users>
+          <Products>
+            <>
+              <HeaderTop />
+              <HeaderCenter />
+              <HeaderBottom />
+            </>
+            {children}
+            <>
+              <Footer />
+            </>
+          </Products>
+        </Users>
       </body>
     </html>
   )

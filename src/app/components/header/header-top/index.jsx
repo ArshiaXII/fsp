@@ -12,7 +12,7 @@ function HeaderTop() {
           <BiUser />
         </span>
         <Link href="/login">Üye Girişi</Link>
-        <span> / </span>
+
         <Link href="/uye-ol">Yeni Üyelik</Link>
       </div>
     </div>

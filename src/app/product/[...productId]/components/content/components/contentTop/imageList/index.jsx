@@ -13,10 +13,10 @@ export default function ProductImages({product}) {
   return (
     <div className={S.mainDiv}>
         <div className={S.imageBig}>
-            <Image src={images[selectedImage]} alt="resm" width={500} height={500} />
+            <Image priority src={images[selectedImage]} alt="resm" width={500} height={500} />
         </div>
         <div className={S.smallImages}>
-            {images.map((image,ind) => (
+            {images?.map((image,ind) => (
                 <div className={S.imageSmall} key={ind}>
                     <Image onClick={() => setSelectedImage(ind) } src={images[ind] } width={50} height={50} alt="resm"/>
                 </div>

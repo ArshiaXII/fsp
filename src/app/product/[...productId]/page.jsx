@@ -6,7 +6,7 @@ import * as S  from "./styled"
 
 export default async function ProductPage({params}) {
 
-  const id = params.productId[0];
+  const id = params.productId;
 
   const fetchProduct = async () => {
     const data = await fetch(`https://amber-goat-garb.cyclic.app/products/${id}`);

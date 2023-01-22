@@ -19,7 +19,7 @@ export default function ContentBottom({ product }) {
       <div className={S.content}>
         <table className='w-1/3'>
           <tbody>
-            {features.map((feature, ind) => (
+            {features?.map((feature, ind) => (
               <tr key={ind} className='flex gap-x-8 border border-solid border-black'>
                 <td className='flex-1 px-2 py-1 bg-gray-300'>{feature.key}</td>
                 <td className='flex-1 px-2 py-1'>{feature.value}</td>

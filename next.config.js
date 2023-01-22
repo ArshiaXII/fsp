@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    appDir: false,
+    appDir: true,
   },
   images: {
     remotePatterns: [{protocol:'https',hostname:"st.myideasoft.com"},{protocol:'https',hostname:"st2.myideasoft.com"},{protocol:'https',hostname:"st3.myideasoft.com"},{protocol:'https',hostname:"*.myideasoft.com"},{protocol:"https",hostname:"img-itopya.mncdn.com"}],

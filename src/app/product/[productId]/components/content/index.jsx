@@ -12,3 +12,4 @@ export default function Content({product}) {
     </div>
   )
 }
+

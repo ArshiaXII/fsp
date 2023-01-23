@@ -37,7 +37,7 @@ export default ProductPage;
 
 
 export async function generateStaticParams() {
-  console.log("gellommmmaaaaaaaaaaa")
+
     const products = await productsFetch();
 
     return products.map((product) => ({productId: `${product.id}`}))

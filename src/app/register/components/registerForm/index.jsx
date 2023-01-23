@@ -29,7 +29,7 @@ export default function RegisterForm() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ firtname: values.firstname, lastname: values.lastname, email: values.email, password: values.password })
+                body: JSON.stringify({ firstname: values.firstname, lastname: values.lastname, email: values.email, password: values.password })
             }).then(() => {
                 setRegistryState(true);
             })

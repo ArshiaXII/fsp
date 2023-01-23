@@ -15,7 +15,7 @@ export default function LoginForm() {
 
     const router = useRouter();
 
-    const { setIsLoginned } = useContext(UsersContext);
+    const { setIsLoginned, setLoginnedUser } = useContext(UsersContext);
 
     const [emailNotFound, setEmailNotFound] = useState(false);
     const [passwordWrong, setPasswordWrong] = useState(false);
@@ -35,7 +35,10 @@ export default function LoginForm() {
             }
             else {
                 if (data[0].password === values.password) {
-                    // setIsLoginned(true);
+                    setIsLoginned(true);
+                    setLoginnedUser(data[0]);
+                    localStorage.setItem("loginned",JSON.stringify(true));
+                    localStorage.setItem("loginnedUser",JSON.stringify(data[0].id));
                     setEmailNotFound(false);
                     setPasswordWrong(false);
                     router.push("/");

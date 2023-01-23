@@ -1,8 +1,20 @@
+"use client"
+import { UsersContext } from '@/context/User';
 import Image from 'next/image';
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import * as S from "./styled"
 
+
+
 export default function FavoritesPage() {
+
+    const {fetchUserFavorites, userFavorites} = useContext(UsersContext);
+   
+    useEffect(() => {
+        fetchUserFavorites();
+    },[])
+
+
     return (
         <div className={S.mainDiv}>
             <div className={S.pageTitle}>
@@ -20,20 +32,15 @@ export default function FavoritesPage() {
                         </tr>
                     </thead>
                     <tbody>
+                        {userFavorites.map((fav) => (
                             <tr className={S.tableRow}>
-                                <td className={S.tableCol}><Image width={50} height={50} src="https://st1.myideasoft.com/idea/hz/44/myassets/products/612/singer-model-150-profesyonel-dikis-prova-mankeni-1969_min.jpeg?revision=1673589074" alt="resm" /></td>
-                                <td className={S.tableCol}>Singer Model 150 Profesyonel Dikiş Prova Mankeni</td>
-                                <td className={S.tableCol}>1.863,56 TL</td>
-                                <td className={S.tableCol}>2.199,00 TL</td>
+                                <td className={S.tableCol}><Image width={50} height={50} src={fav.images[0]} alt="resm" /></td>
+                                <td className={S.tableCol}>{fav.title}</td>
+                                <td className={S.tableCol}>{fav.reducedprice},00 TL</td>
+                                <td className={S.tableCol}>{fav.totalprice},00 TL</td>
                                 <td className={S.tableCol}><button className={S.deleteBtn}>Sil</button></td>
                             </tr>
-                            <tr className={S.tableRow}>
-                                <td className={S.tableCol}><Image width={50} height={50} src="https://st2.myideasoft.com/idea/hz/44/myassets/products/299/joseph-joseph-60172-folio-standli-kesme-tahtasi-seti-rose-gold-10265_min.jpeg?revision=1673417868" alt="resm" /></td>
-                                <td className={S.tableCol}>Joseph Joseph 60172 Folio Standlı Kesme Tahtası Seti - Rose Gold</td>
-                                <td className={S.tableCol}>1.778,81 TL</td>
-                                <td className={S.tableCol}>2.099,00 TL</td>
-                                <td className={S.tableCol}><button className={S.deleteBtn}>Sil</button></td>
-                            </tr>
+                            ))}
                     </tbody>
                 </table>
             </div>

@@ -7,6 +7,7 @@ function Users(props) {
 
   const [isLoginned, setIsLoginned] = useState(false);
   const [loginnedUser, setLoginnedUser] = useState({});
+  const [userFavorites, setUserFavorites] = useState([]);
 
   useEffect(() => {
     const loginned = JSON.parse(localStorage.getItem("loginned"));
@@ -25,12 +26,25 @@ function Users(props) {
     setLoginnedUser(data);
   }
 
+  const fetchUserFavorites = async () => {
+    const favorites = [];
+    for (var i = 0; i < loginnedUser.favorites.length; i++) {
+      const res = await fetch(`https://amber-goat-garb.cyclic.app/products/${loginnedUser.favorites[i]}`);
+      const data = await res.json();
+      favorites.push(data);
+    }
+    setUserFavorites(favorites);
+  }
+
 
   const values = {
     isLoginned,
     setIsLoginned,
     loginnedUser,
-    setLoginnedUser
+    setLoginnedUser,
+    fetchLoginnedUserData,
+    fetchUserFavorites,
+    userFavorites
   };
 
 

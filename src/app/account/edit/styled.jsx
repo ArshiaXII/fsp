@@ -9,7 +9,9 @@ const styled = {
     radioInputDiv: " w-64 flex justify-between px-6 items-center",
     buttonDiv: "flex justify-center my-2 items-center gap-x-6",
     cancelBtn: "bg-customLightGray px-3 py-2",
-    confirmBtn: "bg-customRed text-customWhite px-3 py-2"
+    confirmBtn: "bg-customRed text-customWhite px-3 py-2",
+    form: "flex text-sm flex-col bg-customWhite gap-y-3 px-12",
+    errormessage: "text-customRed"
 };
 
 module.exports = styled;

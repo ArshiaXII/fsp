@@ -13,16 +13,15 @@ export default function ContentBottom({ product }) {
       <div className={S.linkGroup}>
         <div className={S.link}>Ürün Bilgisi</div>
         <div className={S.link}>Yorumlar</div>
-        <div className={S.link}>Taksit Seçenekleri</div>
-        <div className={S.link}>Önerileriniz</div>
+        <div className={S.link}>Taksit Bilgisi</div>
       </div>
       <div className={S.content}>
-        <table className='w-1/3'>
+        <table className='w-11/12 md:w-1/3'>
           <tbody>
             {features?.map((feature, ind) => (
               <tr key={ind} className='flex gap-x-8 border border-solid border-black'>
-                <td className='flex-1 px-2 py-1 bg-gray-300'>{feature.key}</td>
-                <td className='flex-1 px-2 py-1'>{feature.value}</td>
+                <td className='text-xs md:text-base align-middle flex-1 px-1 md:px-2 py-1 bg-gray-300'>{feature.key}</td>
+                <td className='text-xs md:text-base align-middle flex-1 px-1 md:px-2 py-1'>{feature.value}</td>
               </tr>
             ))}
           </tbody>

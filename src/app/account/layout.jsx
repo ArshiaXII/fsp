@@ -10,18 +10,18 @@ export default function AccountLayout({ children }) {
 
     const router = useRouter();
 
-    const { isLoginned } = useContext(UsersContext);
+    const loginned = JSON.parse(localStorage.getItem("loginned"));
 
     useEffect(() => {
-        if (isLoginned === false) {
+        if (loginned === false) {
             router.push('/login');
         }
-    }, [isLoginned])
+    }, [loginned])
 
     return (
         <div className={S.mainDiv}>
             <div className={S.container}>
-                {isLoginned === true ?
+                {loginned === true ?
                     <>
                         <SidebarMenu />
                         {children}
@@ -31,3 +31,5 @@ export default function AccountLayout({ children }) {
         </div>
     )
 }
+
+

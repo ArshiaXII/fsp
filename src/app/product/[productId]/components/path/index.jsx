@@ -6,13 +6,11 @@ export default function Path({product}) {
     return (
         <div className={S.mainDiv}>
             <div className={S.content}>
-                <Link href="/">Ana Sayfa</Link>
-                -
-                <Link href="/">{product.type}</Link>
-                -
-                <Link href="/">{product.brand}</Link>
-                -
-                <Link href="/">{product.title}</Link>
+                <Link className={S.link} href="/">Ana Sayfa</Link>
+                /
+                <Link className={S.link} href="/">{product.type}</Link>
+                /
+                <Link className={S.link} href="/">{product.brand}</Link>
             </div>
         </div>
     )

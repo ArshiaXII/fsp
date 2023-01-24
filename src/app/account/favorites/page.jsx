@@ -1,7 +1,7 @@
 "use client"
 import { UsersContext } from '@/context/User';
 import Image from 'next/image';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import * as S from "./styled"
 
 
@@ -32,8 +32,8 @@ export default function FavoritesPage() {
                         </tr>
                     </thead>
                     <tbody>
-                        {userFavorites.map((fav) => (
-                            <tr className={S.tableRow}>
+                        {userFavorites.map((fav,ind) => (
+                            <tr key={ind} className={S.tableRow}>
                                 <td className={S.tableCol}><Image width={50} height={50} src={fav.images[0]} alt="resm" /></td>
                                 <td className={S.tableCol}>{fav.title}</td>
                                 <td className={S.tableCol}>{fav.reducedprice},00 TL</td>

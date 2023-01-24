@@ -4,7 +4,6 @@ import * as S from "./styled";
 
 export default function ContentBottom({ product }) {
 
-  const features = product.table;
 
 
 
@@ -18,7 +17,7 @@ export default function ContentBottom({ product }) {
       <div className={S.content}>
         <table className='w-11/12 md:w-1/3'>
           <tbody>
-            {features?.map((feature, ind) => (
+            {product.table?.map((feature, ind) => (
               <tr key={ind} className='flex gap-x-8 border border-solid border-black'>
                 <td className='text-xs md:text-base align-middle flex-1 px-1 md:px-2 py-1 bg-gray-300'>{feature.key}</td>
                 <td className='text-xs md:text-base align-middle flex-1 px-1 md:px-2 py-1'>{feature.value}</td>

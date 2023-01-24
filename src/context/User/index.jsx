@@ -10,12 +10,15 @@ function Users(props) {
   const [userFavorites, setUserFavorites] = useState([]);
 
   useEffect(() => {
-    const loginned = JSON.parse(localStorage.getItem("loginned"));
-    setIsLoginned(loginned);
-    if (loginned === true) {
-      const userId = JSON.parse(localStorage.getItem("loginnedUser"));
-      fetchLoginnedUserData(userId);
 
+    if (typeof window !== 'undefined') {
+      var loginned = JSON.parse(localStorage.getItem("loginned"));
+      setIsLoginned(loginned);
+      if (loginned === true) {
+        const userId = JSON.parse(localStorage.getItem("loginnedUser"));
+        fetchLoginnedUserData(userId);
+
+      }
     }
 
   }, [])
@@ -28,7 +31,7 @@ function Users(props) {
 
   const fetchUserFavorites = async () => {
     const favorites = [];
-    for (var i = 0; i < loginnedUser.favorites.length; i++) {
+    for (var i = 0; i < loginnedUser.favorites?.length; i++) {
       const res = await fetch(`https://amber-goat-garb.cyclic.app/products/${loginnedUser.favorites[i]}`);
       const data = await res.json();
       favorites.push(data);

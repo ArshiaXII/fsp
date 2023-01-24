@@ -15,7 +15,7 @@ export default function AddressBookPage() {
                 <h1>Adres Defterim</h1>
             </div>
             <div className={S.content}>
-                {loginnedUser.adresses.map((adress,ind) => (
+                {loginnedUser.adresses?.map((adress,ind) => (
                     <div key={ind} className={S.contentItemDiv}>
                         <div className={S.adressTitle}>Adres Tanımı: <span className={S.adressValue}>{adress.title}</span></div>
                         <div className={S.adressContent}>

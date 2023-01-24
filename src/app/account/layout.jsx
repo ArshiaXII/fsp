@@ -9,8 +9,12 @@ export default function AccountLayout({ children }) {
 
 
     const router = useRouter();
+    var loginned = false;
+    
+    if (typeof window !== 'undefined') {
+        var loginned = JSON.parse(localStorage.getItem("loginned"));
+    }
 
-    const loginned = JSON.parse(localStorage.getItem("loginned"));
 
     useEffect(() => {
         if (loginned === false) {

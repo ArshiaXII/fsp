@@ -14,17 +14,15 @@ export default function ProductEvents({product}) {
 
         userFavorites.push(product.id.toString());
 
-        console.log(userFavorites)
-
-        // await fetch(`https://amber-goat-garb.cyclic.app/users/${loginnedUser.id}`, {
-        //     method: 'PATCH',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({favorites: userFavorites})
-        // }).then(() => {
-        //     fetchLoginnedUserData();
-        // })
+        await fetch(`https://amber-goat-garb.cyclic.app/users/${loginnedUser.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({favorites: userFavorites})
+        }).then(() => {
+            fetchLoginnedUserData();
+        })
     }
 
     return (

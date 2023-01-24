@@ -11,22 +11,21 @@ function Users(props) {
 
   useEffect(() => {
 
-    if (typeof window !== 'undefined') {
-      var loginned = JSON.parse(localStorage.getItem("loginned"));
-      setIsLoginned(loginned);
-      if (loginned === true) {
-        const userId = JSON.parse(localStorage.getItem("loginnedUser"));
-        fetchLoginnedUserData(userId);
 
-      }
+    var loginned = JSON.parse(localStorage.getItem("loginned"));
+    setIsLoginned(loginned);
+    if (loginned === true) {
+      const userId = JSON.parse(localStorage.getItem("loginnedUser"));
+      fetchLoginnedUserData(userId);
+
     }
-
   }, [])
 
   const fetchLoginnedUserData = async (id) => {
     const res = await fetch(`https://amber-goat-garb.cyclic.app/users/${id}`);
     const data = await res.json();
     setLoginnedUser(data);
+    console.log(data)
   }
 
   const fetchUserFavorites = async () => {

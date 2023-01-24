@@ -1,36 +1,30 @@
 "use client"
 import { UsersContext } from '@/context/User';
-import { useRouter } from 'next/navigation';
-import React, { useContext, useEffect } from 'react';
+import Link from 'next/link';
+import React, { useContext } from 'react';
 import SidebarMenu from './components/sidebarMenu';
 import * as S from "./styled"
 
 export default function AccountLayout({ children }) {
 
-
-    const router = useRouter();
-    var loginned = false;
-    
-    if (typeof window !== 'undefined') {
-        var loginned = JSON.parse(localStorage.getItem("loginned"));
-    }
+    const { isLoginned } = useContext(UsersContext);
 
 
-    useEffect(() => {
-        if (loginned === false) {
-            router.push('/login');
-        }
-    }, [loginned])
+
+
 
     return (
         <div className={S.mainDiv}>
             <div className={S.container}>
-                {loginned === true ?
+                {isLoginned === true ?
                     <>
                         <SidebarMenu />
                         {children}
                     </>
-                    : null}
+                    :
+                    <div className='bg-customWhite w-full h-48 text-2xl flex items-center justify-center gap-x-2'>
+                        Lütfen <Link href="/login" className='text-customRed hover:underline'>giriş</Link>  yapınız.
+                    </div>}
             </div>
         </div>
     )

@@ -16,16 +16,15 @@ export default function FavoritesPage() {
 
     const handleDelFav = async (id) => {
         let favList = loginnedUser.favorites;
-        favList = userFavorites.filter((fav) => fav !== id.toString());
+        favList = favList.filter((fav) => fav != id);
         await fetch(`https://amber-goat-garb.cyclic.app/users/${loginnedUser.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({favorites: favList})
-        }).then(async () => {
-            await fetchLoginnedUserData();
-            await fetchUserFavorites();
+        }).then(() => {
+            fetchLoginnedUserData();
         })
     }
 

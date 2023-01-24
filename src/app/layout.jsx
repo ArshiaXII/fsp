@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
       <body >
         <Users>
           <Products>
+            {/* Same as */}
             <>
               <HeaderTop />
               <HeaderCenter />

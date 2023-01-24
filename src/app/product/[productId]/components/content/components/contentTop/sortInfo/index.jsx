@@ -1,11 +1,16 @@
 import React from 'react';
 import BasketItem from './components';
 import * as S from "./styled";
-import { AiOutlineGift,AiFillSound, AiFillHeart, AiFillMessage, AiFillBell} from "react-icons/ai";
+import { AiOutlineGift } from "react-icons/ai";
 import { MdDeliveryDining } from "react-icons/md";
+import ProductEvents from './components/productEvents';
 
 
-export default function ProductSortInfo({product}) {
+export default function ProductSortInfo({ product }) {
+
+
+
+
     return (
         <div className={S.mainDiv}>
             <div className={S.pricing}>
@@ -40,20 +45,7 @@ export default function ProductSortInfo({product}) {
                     <h5 className={S.deliveryInfoTitle}>Tüm Türkiye’ye Ücretsiz Kargo</h5>
                 </div>
             </div>
-            <div className={S.productActions}>
-                <div className={S.productAction}>
-                    <span><AiFillHeart/></span> Favorilerime Ekle
-                </div>
-                <div className={S.productAction}>
-                    <span><AiFillSound /></span> Tavsiye Et
-                </div>
-                <div className={S.productAction}>
-                    <span><AiFillMessage/></span> Yorum Yaz
-                </div>
-                <div className={S.productAction}>
-                    <span><AiFillBell/></span> Fiyat Alarmı
-                </div>
-            </div>
+            <ProductEvents product={product} />
         </div>
     )
 }

@@ -8,11 +8,26 @@ import * as S from "./styled"
 
 export default function FavoritesPage() {
 
-    const {fetchUserFavorites, userFavorites} = useContext(UsersContext);
+    const {fetchUserFavorites, userFavorites, fetchLoginnedUserData, loginnedUser} = useContext(UsersContext);
    
     useEffect(() => {
         fetchUserFavorites();
     },[])
+
+    const handleDelFav = async (id) => {
+        let favList = loginnedUser.favorites;
+        favList = userFavorites.filter((fav) => fav !== id.toString());
+        await fetch(`https://amber-goat-garb.cyclic.app/users/${loginnedUser.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({favorites: favList})
+        }).then(async () => {
+            await fetchLoginnedUserData();
+            await fetchUserFavorites();
+        })
+    }
 
 
     return (
@@ -38,7 +53,7 @@ export default function FavoritesPage() {
                                 <td className={S.tableCol}>{fav.title}</td>
                                 <td className={S.tableCol}>{fav.reducedprice},00 TL</td>
                                 <td className={S.tableCol}>{fav.totalprice},00 TL</td>
-                                <td className={S.tableCol}><button className={S.deleteBtn}>Sil</button></td>
+                                <td className={S.tableCol}><button onClick={() => handleDelFav(fav.id)} className={S.deleteBtn}>Sil</button></td>
                             </tr>
                             ))}
                     </tbody>

@@ -7,12 +7,22 @@ import * as S from "./styled";
 
 export default function ImageCarousel() {
     const images = [
-        "https://st.myideasoft.com/idea/hz/44/myassets/slider_pictures/pictures_1_2.jpg?revision=1637917139",
-        "https://st.myideasoft.com/idea/hz/44/myassets/slider_pictures/pictures_1_4.jpg?revision=1637917139",
-        "https://st.myideasoft.com/idea/hz/44/myassets/slider_pictures/pictures_1_1.jpg?revision=1637917139"
+        "https://pbs.twimg.com/media/DCLXUiUXoAAkSyk.jpg",
+        "https://cdn.shopify.com/s/files/1/0028/7509/7153/files/11_c3e8d85f-022a-4635-88c6-ef178e72502c.jpg?v=1621523334",
+        "https://filearchive.cnews.ru/mrtest/images/publication/461/63461_IMG_1200X500.jpg",
+        "https://filearchive.cnews.ru/mrtest/images/publication/081/64081_IMG_1200X500.jpg",
     ];
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    //AUTO
+    setInterval(() => {
+        if (currentImageIndex === (images.length - 1)) {
+            setCurrentImageIndex(0);
+        } else {
+            setCurrentImageIndex(currentImageIndex + 1);
+        }
+    }, 4000)
 
     const handleCircleButtons = (ind) => {
         setCurrentImageIndex(ind);
@@ -42,7 +52,7 @@ export default function ImageCarousel() {
             {/* //Images */}
             <div>
                 <Link href="/">
-                <Image width={1400} height={400} src={images[currentImageIndex]} alt="resim" />
+                    <Image width="1400" height="400" src={images[currentImageIndex]} alt="resim" />
                 </Link>
             </div>
 

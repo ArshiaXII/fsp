@@ -7,7 +7,6 @@ const styled = {
     reducedPrice: "font-medium text-base",
     realPrice: "line-through text-sm",
     prices: "flex-1 px-4 lg:",
-    addBasket: "p-3 group-hover:text-customRed ",
     productInfo: "flex flex-col justify-center items-center gap-y-4"
 };
 

@@ -14,6 +14,12 @@ export default function AddressBookPage() {
     const [formValues, setFormValues] = useState({ title: "", adress: "", country: "", city: "", state: "", tel: "" });
     const [editMode, setEditMode] = useState(false);
 
+    const handleAddAdress = () => {
+        setEditMode(false);
+        setModalVisibility(true);
+        setFormValues({ title: "", adress: "", country: "", city: "", state: "", tel: "" });
+    }
+
     return (
         <div className={S.mainDiv}>
             <AddAdressModal editMode={editMode} setEditMode={setEditMode} formValues={formValues} setFormValues={setFormValues} modalVisibility={modalVisibility} setModalVisibility={setModalVisibility} />
@@ -34,7 +40,7 @@ export default function AddressBookPage() {
                 ))}
                 <div className={S.contentItemDiv}>
                     <div className={S.newAdressDiv}>
-                        <button onClick={() => setModalVisibility(true)} className={S.newAdressBtn}><FaPlusCircle /> Yeni Adres Ekle</button>
+                        <button onClick={() => handleAddAdress()} className={S.newAdressBtn}><FaPlusCircle /> Yeni Adres Ekle</button>
                     </div>
                 </div>
             </div>

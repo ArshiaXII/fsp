@@ -1,8 +1,8 @@
 import React from 'react';
 import * as S from "./styled";
-import { BsFillBasket3Fill } from 'react-icons/bs';
 import Image from 'next/image';
 import Link from 'next/link';
+import AddBasketBtn from './components/addBasketBtn';
 
 export default function ProductCard({product}) {
 
@@ -30,9 +30,7 @@ export default function ProductCard({product}) {
                         {product.price},00 ₺
                     </h4>
                 </div>
-                <div className={S.addBasket}>
-                    <BsFillBasket3Fill />
-                </div>
+                <AddBasketBtn product={product} />
             </div>
         </div>
     )

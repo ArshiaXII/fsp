@@ -8,6 +8,7 @@ function Users(props) {
   const [isLoginned, setIsLoginned] = useState(false);
   const [loginnedUser, setLoginnedUser] = useState({});
   const [userFavorites, setUserFavorites] = useState([]);
+  const [userBasket,setUserBasket] = useState([]);
 
   console.log(userFavorites);
 
@@ -48,7 +49,8 @@ function Users(props) {
     fetchLoginnedUserData,
     fetchUserFavorites,
     userFavorites,
-
+    userBasket,
+    setUserBasket
   };
 
 

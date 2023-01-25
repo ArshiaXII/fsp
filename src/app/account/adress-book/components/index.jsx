@@ -6,7 +6,7 @@ import * as S from "./styled";
 import * as yup from "yup";
 import { UsersContext } from '@/context/User';
 
-export default function AddAdressModal({ setModalVisibility, modalVisibility, formValues, editMode, setEditMode }) {
+export default function AddAdressModal({ setModalVisibility, modalVisibility, formValues, setFormValues, editMode, setEditMode }) {
 
     const { loginnedUser, fetchLoginnedUserData } = useContext(UsersContext);
 
@@ -22,16 +22,36 @@ export default function AddAdressModal({ setModalVisibility, modalVisibility, fo
         },
         onSubmit: async (values) => {
             var userAdressList = loginnedUser.adresses.slice();
-            userAdressList.push(values);
-            await fetch(`https://amber-goat-garb.cyclic.app/users/${loginnedUser.id}`, {
-                method: "PATCH",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ adresses: userAdressList })
-            })
+            if (editMode === false) {
+                //Add Adress
+                userAdressList.push(values);
+                await fetch(`https://amber-goat-garb.cyclic.app/users/${loginnedUser.id}`, {
+                    method: "PATCH",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ adresses: userAdressList })
+                })
+            }
+            else {
+                //Edit Adress
+                userAdressList = loginnedUser.adresses.filter((el) => el.title !== formValues.title);
+                userAdressList.push(values);
+                await fetch(`https://amber-goat-garb.cyclic.app/users/${loginnedUser.id}`, {
+                    method: "PATCH",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ adresses: userAdressList })
+                })
+            }
+
             await fetchLoginnedUserData(loginnedUser.id);
             setModalVisibility(false);
+            formik.handleReset();
+        },
+        onReset: () => {
+            setModalVisibility(false)
         },
         validationSchema: yup.object().shape({
             title: yup.string().required("Lütfen bir adres tanımı giriniz!").min(2, "Adres tanımı çok kısa").max(12, "Adres tanımı çok uzun"),
@@ -43,6 +63,13 @@ export default function AddAdressModal({ setModalVisibility, modalVisibility, fo
         })
     })
 
+    useEffect(() => {
+        formik.setValues(formValues)
+    }, [modalVisibility])
+
+
+
+
 
 
 
@@ -51,17 +78,11 @@ export default function AddAdressModal({ setModalVisibility, modalVisibility, fo
             {modalVisibility === true ?
                 <div className={S.mainDiv} style={{ zIndex: "2" }}>
                     <div className="fixed inset-0 transition-opacity">
-                        <div  className="absolute inset-0 bg-gray-500 opacity-75"></div>
+                        <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
                     </div>
-                    <div className="bg-customWhite rounded-lg shadow relative p-2 ">
-                        <div className="flex justify-end  p-2">
-
-                            <button onClick={() => setModalVisibility(false)} type="button" className={S.closeBtn} data-modal-toggle="authentication-modal">
-                                <AiFillCloseCircle className='text-customRed' />
-                            </button>
-                        </div>
-                        <h1 className='px-8 text-xl font-medium'>Yeni Adres</h1>
-                        <form onSubmit={formik.handleSubmit} className={S.form}>
+                    <div className="bg-customWhite rounded-lg shadow relative p-2 pt-8">
+                        <h1 className='px-8 text-xl font-medium'>{editMode === false ? "Adres Ekle" : "Adresi Düzenle"}</h1>
+                        <form onReset={formik.handleReset} onSubmit={formik.handleSubmit} className={S.form}>
                             <div className={S.inputRow}>
                                 <label htmlFor='title'>Adres Tanımı:</label>
                                 <input value={formik.values.title} onBlur={formik.handleBlur} onChange={formik.handleChange} className={S.textInput} name='title' type="text" />
@@ -121,12 +142,12 @@ export default function AddAdressModal({ setModalVisibility, modalVisibility, fo
                             {editMode === false ?
                                 <div className={S.btnDiv}>
                                     <button type='submit' className={S.btnAdd}>Ekle</button>
-                                    <button onClick={() => setModalVisibility(false)} className={S.btnCancel}>İptal</button>
+                                    <button type="reset" className={S.btnCancel}>İptal</button>
                                 </div>
                                 :
                                 <div className={S.btnDiv}>
-                                    <button type='submit' className={S.btnAdd}>Güncelle</button>
-                                    <button onClick={() => setModalVisibility(false)} className={S.btnCancel}>İptal</button>
+                                    <button type='submit' className={S.btnAdd}>Düzenle</button>
+                                    <button type="reset" className={S.btnCancel}>İptal</button>
                                 </div>}
                         </form>
 

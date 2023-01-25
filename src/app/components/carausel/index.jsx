@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsCircleFill } from "react-icons/bs";
 import * as S from "./styled";
 
@@ -15,14 +15,7 @@ export default function ImageCarousel() {
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    //AUTO
-    setInterval(() => {
-        if (currentImageIndex === (images.length - 1)) {
-            setCurrentImageIndex(0);
-        } else {
-            setCurrentImageIndex(currentImageIndex + 1);
-        }
-    }, 4000)
+
 
     const handleCircleButtons = (ind) => {
         setCurrentImageIndex(ind);

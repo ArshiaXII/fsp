@@ -23,7 +23,7 @@ function HeaderCenter() {
             <SearchComp />
           </div>
           <div className={S.btnsOfRight}>
-            <div className={S.btnUser}><BiUser /></div>
+            <Link href="/account" className={S.btnUser}><BiUser /></Link>
             <BasketComp />
           </div>
         </div>

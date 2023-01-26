@@ -3,12 +3,14 @@ import { UsersContext } from '@/context/User';
 import React, { useContext, useEffect, useState } from 'react'
 import { AiFillExclamationCircle } from 'react-icons/ai';
 import BasketItem from './components/basketItem';
-
 import * as S from "./styled";
+
 
 export default function BasketPage() {
 
-    const { userBasket, loginnedUser, fetchLoginnedUserData } = useContext(UsersContext);
+
+
+    const { isLoginned, userBasket, completeShopping } = useContext(UsersContext);
 
     const [totalPrice, setTotalPrice] = useState(0);
     const [kdvlessPrice, setKdvlessPrice] = useState(0);
@@ -29,26 +31,7 @@ export default function BasketPage() {
     }, [userBasket])
 
 
-    const completeShopping = async () => {
-        let userOrders = loginnedUser.orders;
-        let orderItems = [];
-        userBasket.forEach((e) => {
-            orderItems.push({count: e.count, product: e.product.id})
-        })
-        let newOrder = [];
-        newOrder.push({id: 1, status: "Hazırlanıyor"});
-        newOrder.push(orderItems)
 
-        userOrders.push(newOrder);
-        await fetch(`https://amber-goat-garb.cyclic.app/users/${loginnedUser.id}`, {
-            method: "PATCH",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ orders: newOrder })
-        })
-        fetchLoginnedUserData(loginnedUser.id)
-    }
 
     return (
         <div className={S.mainDiv}>
@@ -76,7 +59,12 @@ export default function BasketPage() {
                             <div className={S.basketStatementTotalPrice}>Toplam <span className={S.basketStatementCalculationValue}>{totalPrice},00 TL</span></div>
                         </div>
                         <div>
-                            <button onClick={completeShopping} className={S.basketStatementBtn}>Alışverişi Tamamla</button>
+                            {isLoginned === true ?
+                                <button onClick={completeShopping} className={S.basketStatementBtn}>Alışverişi Tamamla</button>
+                                :
+                                <h5 className={S.loginMessage}>
+                                    Sipariş vermek için lütfen giriş yapınız!
+                                </h5>}
                         </div>
 
                     </div>

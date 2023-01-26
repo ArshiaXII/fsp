@@ -12,7 +12,7 @@ const styled= {
     basketStatementCalculationValue: 'font-medium',
     basketStatementTotalPrice: 'flex justify-between items-center text-lg',
     basketStatementBtn: 'w-full text-customWhite bg-customRed py-2',
-
+    loginMessage: "text-customRed text-sm italic text-center",
     emptyBasketContainer: "container px-4 md:px-12 py-10 flex items-center flex-col justify-center bg-customWhite gap-y-3",
     emptyIcon: "text-7xl text-customRed",
     emptyMessage: "text-lg"

@@ -9,7 +9,11 @@ const styled = {
     orderIconCheck: "text-green-500",
     orderIconX: "text-red-500",
     orderIconPreparing: "text-yellow-500",
-    orderStateDiv: "flex items-center justify-center gap-x-2"
+    orderStateDiv: "flex items-center justify-center gap-x-2",
+    productCount: "text-customRed mr-2",
+    emptyOrderContainer: "container px-4 md:px-12 py-10 flex items-center flex-col justify-center bg-customWhite gap-y-3",
+    emptyIcon: "text-7xl text-customRed",
+    emptyMessage: "text-lg"
 };  
 
 module.exports = styled;

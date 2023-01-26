@@ -1,8 +1,13 @@
+"use client"
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import CommentList from '../components/commentList';
 import * as S from "./styled";
 
 export default function ContentBottom({ product }) {
+
+    const [viewedContent,setViewedContent] = useState("desc");
+
 
 
 
@@ -10,11 +15,12 @@ export default function ContentBottom({ product }) {
   return (
     <div className={S.mainDiv}>
       <div className={S.linkGroup}>
-        <div className={S.link}>Ürün Bilgisi</div>
-        <div className={S.link}>Yorumlar</div>
-        <div className={S.link}>Taksit Bilgisi</div>
+        <div onClick={() => setViewedContent("desc")} className={viewedContent === "desc" ? `${S.link} bg-gray-100` : `${S.link}`}>Ürün Bilgisi</div>
+        <div onClick={() => setViewedContent("comm")} className={viewedContent === "comm" ? `${S.link} bg-gray-100` : `${S.link}`}>Yorumlar</div>
+        <div onClick={() => setViewedContent("innt")} className={viewedContent === "innt" ? `${S.link} bg-gray-100` : `${S.link}`}>Taksit Bilgisi</div>
       </div>
-      <div className={S.content}>
+      {viewedContent === "desc" ? 
+      <div className={S.desContent}>
         <table className='w-11/12 md:w-1/3'>
           <tbody>
             {product.table?.map((feature, ind) => (
@@ -37,6 +43,9 @@ export default function ContentBottom({ product }) {
             : null}
         </div>
       </div>
+      : viewedContent === "comm" ?
+       <CommentList product={product} />
+       : null}
     </div>
   )
 }

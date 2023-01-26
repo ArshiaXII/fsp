@@ -34,7 +34,7 @@ export default function ProductSortInfo({ product }) {
                     <div className={S.quickInfoValue}>{product.id}</div>
                 </div>
             </div>
-            <BasketItem />
+            <BasketItem product={product} />
             <div className={S.deliveryInfos}>
                 <div className={S.deliveryInfo}>
                     <MdDeliveryDining className='text-3xl text-customRed' />

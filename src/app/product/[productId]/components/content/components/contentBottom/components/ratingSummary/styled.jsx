@@ -9,7 +9,7 @@ const styled = {
     starSummary: "flex items-center gap-x-2 w-64 bg-customLightGray text-sm h-4 rounded-xl p-1",
     starSummaryBar : "flex  bg-customWhite w-9/12 h-2 rounded-xl",
     summaryEnd: "flex flex-col items-center justify-center gap-y-3",
-    filledBar: 'bg-yellow-500 w-2/12 rounded-xl text-customLightGray',
+    filledBar: 'bg-yellow-500 rounded-xl text-customLightGray',
 };
 
 

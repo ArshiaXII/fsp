@@ -12,8 +12,8 @@ import Link from 'next/link';
 export default function TypeList() {
 
     const images = [
-        [image1, image2, image3],
-        [image4, image5, image6]
+        [{image : image1, name:"anakart"}, {image : image2, name:"ekran kartı"}, {image : image3, name:"fare"}],
+        [{image : image4, name:"klavye"}, {image : image5, name:"ram"}, {image : image6, name:"ssd"}]
     ]
 
 
@@ -23,9 +23,9 @@ export default function TypeList() {
 
             {images.map((row, index) => (
                 <div key={index} className={S.row}>
-                    {images[index].map((image, ind) => (
-                        <Link href="/product-type" className={S.imageCol}>
-                            <Image key={ind} src={images[index][ind]}  alt="product" />
+                    {images[index].map((item,ind) => (
+                        <Link href={`/products/${item.name}`} className={S.imageCol}>
+                            <Image key={ind} src={item.image}  alt="product" />
                         </Link>
                     ))}
                 </div>

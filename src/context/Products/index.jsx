@@ -1,16 +1,23 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 
 export const ProductsContext = React.createContext();
 
 export default function Products(props) {
 
+  const [listingComments, setListingComments] = useState([]);
 
-  
+
+  const updateProduct = async (id) => {
+
+    setListingComments(data.comments);
+  }
 
 
     const values = {
-        deneme:"merhaba"
+      updateProduct,
+      listingComments,
+      setListingComments
     };
 
   return (

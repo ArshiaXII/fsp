@@ -1,38 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-Commerce-App (NextJS)
 
-## Getting Started
+**NextJS**'i deneyimlemek için geliştirdiğim bir projeydi. Responsive tasarımı için uğraşılmamıştır.
 
-First, run the development server:
+**Not:** Projede gerçek bir veritabanı kullanılmamıştır, **json-server** paketi kullanılarak fake bir api oluşturulmuş ve projede bu api kullanılmıştır.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Deployment
 
-You can start editing the page by modifying `app/page.jsx`. The page auto-updates as you edit the file.
+[https://e-commerce-next-js-phi.vercel.app/](https://e-commerce-next-js-phi.vercel.app/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Projeye Ait Ekran Görüntüsü
+![1](https://lh3.googleusercontent.com/n5f5am41J9INXehhaFktlwhdqOR9-P6J6Mp9Wc79Qzo4qG_NMbxIWb_mJA8pw9RONLzXYf-lbWofbHpv0LQMyfI12e-1z_Bdl9WwJPycWkW6qSUqWT1_-Jo0-2ifDkZjulMi8kCSVwne_XnMKY6zHMG59hermhHwEd36cDCBVopKNrCEasMtyp-sFWyOyfuB5gwspEdAZZrTkN9W0ZRqIMY9iczcKYEWQVVLDFc7y44SZPXYErLIe6mBYhCJxAsNjPourz5glu8JI8aXN4BuLlU18NDEvQCrUr2SUQD5Htr_Am6lx-GgtjrUGL2glWGVYsY3RvJRP8Bt79clxva3SeOzCxhYuHxS2Qw6YS7C8tJ1JHs6nO0ZXAJAvYTnZZehBs9tGSStY8_lGrX_z9Jjd0W7aDI_gG-mVkHmXHmmS0LQihcLlnQdhNY_57CYP8EdQKOyghClg-0oInAgXu-BKzjPa7gswhE99Y8kzt2N0NC67m8zKqfYjWFVFOz2qW_T2uliQzt2DW54dy93DwwZbCJh-KHo2GIgKAlfMK5CPkbxmS1jp5YfwJYY8SR_zf5V2cHgMAsZiz4XObC0IWztCa0zpIq27rXc5hanoVAQyKFE2XnLDQebbQI8DhxJMeVvV1Q0nn_2t4m2Cyl77zL2TwSpUHLAEERJXbSdet_qzkGUednhmJdxH2hr_86iikNk4F5XHhcnoBCTmVpAICBtntLd0gMElLboVGm0kPMI9gWtI_4OyRbndOI6vbSz7gHztyTxV6q1jZlQyob-h6q7HdQETld1R6ifrMYmQGV8D9WZ1GwFZ8ITT9bOFCYYnScfJQT3e6AOd5WMVOQ7ugrAULQ1dnNnYTrsrXIRrQxad1f4XuxtnnsmxWQKDAFIB5l1P4tTToVN7xeq-aNW1DU2snlvjFDSS0Qwx7yQPlYGa-17=w299-h661-s-no?authuser=0)
